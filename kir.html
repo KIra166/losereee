@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href="css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>@kir - oguser.xyz</title>
+    <meta charset="UTF-8">
+    <meta property="og:site_name" content="oguser.xyz">
+    <meta name="theme-color" content="#000000">
+    <meta name="keywords" content="oguser.xyz">
+    <meta name="author" content="$$$">
+    <meta property="og:type" content="site">
+    <meta property="og:title" content="kir">
+    <meta property="og:url" content="https://oguser.xyz">
+    <meta itemprop="name" content="oguser">
+    <meta itemprop="description" content="it is what it is">
+    <meta name="description" content="it is what it is">
+    <meta property="og:description" content="it is what it is">
+    <meta property="og:image" content="images/icon.png">
+    <link rel="icon" href="images/icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        .musicbtn {
+            background: #000000;
+        }
+        .username {
+            font-family: 'Bodoni XT', serif;
+            color: #ffffff;
+        }
+        body {
+            background: #000000 url("images/E49D56E0-1F2A-4405-BFEF-41D832B82E35.png") center center;
+            background-size: cover;
+        }
+        .lyrics-popup {
+            position: fixed;
+            top: 50%;
+            left: 65px;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            display: none;
+            color: #ffffff;
+            max-width: 400px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .lyrics-container {
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 15px;
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .lyrics-container:not(:hover) {
+            opacity: 0.7;
+        }
+        .lyrics-button {
+            background-color: transparent;
+            border: none;
+            color: #ffffff;
+            padding: 5px 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .lyrics-button:hover {
+            transform: scale(1.1);
+        }
+        .close-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .close-button:hover {
+            transform: scale(1.1);
+        }
+        .fade-in {
+            opacity: 1;
+        }
+        .fade-out {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop id="audioatp" src="media/Alcoholics.mp3"></audio>
+
+    <div class="center">
+        <div class="container">
+            <img class="pfp-image" src="images/IMG_2552.jpg" alt="pfp">
+            <p class="username"><span class="sparkle">K I R</span></p>
+            <p class="badges"><img class="badge" src="images/a.png" title="dumped"></p>
+            <p class="bio-text">‎ </p>
+            <p class="bio-text"> The past never dies </p>
+            <div class="socials">
+                <div class="tooltip"><a target="_blank" href="https://t.me/p1ouf"><i class="fa-brands fa-telegram social-icons"></i></a></div>
+                <div class="tooltip"><a target="_blank" href="https://discord.dog/1069583890605408286"><i class="fa-brands fa-discord social-icons"></i></a></div>
+                <div class="tooltip"><a target="_blank" href="https://pnrtscr.com/kqrkc7"><i class="fa-brands fa-instagram social-icons"></i></a></div>
+            </div>
+            <iframe scrolling="no" class="spotifys" style="border-radius:12px" src="https://open.spotify.com/embed/track/30i7brTTl4Oo7OejqZCYvK?utm_source=generator&theme=0" width="97%" height="80" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <button class="lyrics-button" id="showLyrics">Show Lyrics</button>
+        </div>
+    </div>
+
+    <div class="lyrics-popup" id="lyricsPopup">
+        <button class="lyrics-button close-button" id="closeLyrics">×</button>
+        <div class="lyrics-container">
+            <div class="lyrics-container">
+                <p>Know you tell the secrets that I've told you</p>
+                <p>You never keep your promises</p>
+                <p>You tell me that's the old you</p>
+                <p>And I been gone a thousand hours</p>
+                <p>I need some time hold you</p>
+                <p>And you know that I want you</p>
+                <p>I miss you, and</p>
+                <p>Baby, you know I want all of you</p>
+            </div>
+            <div class="lyrics-container">
+                <p>Take me home, I'll</p>
+                <p>Be right over</p>
+                <p>Alcohol means</p>
+                <p>Never sober</p>
+                <p>Need my daily dose</p>
+                <p>Please, be my lover</p>
+                <p>I think I might lose my head</p>
+                <p>Can't be no other's</p>
+            </div>
+            <div class="lyrics-container">
+                <p>You always say, we forever change</p>
+                <p>And you and I not gon' ever be the same</p>
+                <p>Can't keep together without you, I lose my brain</p>
+                <p>I need your lovin' injected through my veins</p>
+            </div>
+            <div class="lyrics-container">
+                <p>I always</p>
+                <p>Think bad, Mixed up</p>
+                <p>Words don't, Fix nun'</p>
+                <p>Heartbreak, Hate love</p>
+                <p>Need more, Drink some (I always)</p>
+                <p>Think bad, Mixed up</p>
+                <p>Words don't, Fix nun'</p>
+                <p>Heartbreak, Hate love</p>
+                <p>Need more, Drink some</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="blurthepage" class="blurpage">
+        <div class="center">
+            <button class="musicbtn" id="musicbtn">
+                <i id="volumebtn" class="fas fa-volume-up"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const lyricsButton = document.getElementById('showLyrics');
+        const lyricsPopup = document.getElementById('lyricsPopup');
+        const closeButton = document.getElementById('closeLyrics');
+
+        lyricsButton.addEventListener('click', () => {
+            lyricsPopup.style.display = 'block';
+            setTimeout(() => {
+                lyricsPopup.classList.add('fade-in');
+            }, 10);
+        });
+
+        closeButton.addEventListener('click', () => {
+            lyricsPopup.classList.remove('fade-in');
+            setTimeout(() => {
+                lyricsPopup.style.display = 'none';
+                lyricsPopup.classList.remove('fade-out');
+            }, 300);
+            lyricsPopup.classList.add('fade-out');
+        });
+    </script>
+
+    <script src="js/music.js"></script>
+
+    <a href="https://discord.gg/mR75jGypBN"><p class="mark">© 2023 oguser.xyz</p></a>
+</body>
+</html>

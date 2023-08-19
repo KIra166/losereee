@@ -1,0 +1,1 @@
+!function(e,a,t,n,g,o,c){e.GoogleAnalyticsObject=t,e.ga||(e.ga=function(){(e.ga.q=e.ga.q||[]).push(arguments)}),e.ga.x=+new Date,o=a.createElement(n),c=a.getElementsByTagName(n)[0],o.src="https://www.google-analytics.com/analytics.js",c.parentNode.insertBefore(o,c)}(window,document,"ga","script"),ga("create","UA-122247573-1","obnoxious.club"),ga("send","pageview");
