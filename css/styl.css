@@ -40,7 +40,7 @@ i{
     animation: down 2s;
     border-radius: 100%;
     object-fit: cover;
-    border: 10px solid #201f1f38;
+    border: 0px solid #FFFFFF;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -52,7 +52,7 @@ i{
     font-size: 24px;
     animation: up 2s;
     font-weight: 500;
-    color: #f1f1f1bd;
+    color: #000000;
 }
 
 .badges{
@@ -71,7 +71,7 @@ i{
     font-size: 18px;
     animation: up 2s;
     font-weight: 500;
-    color: #f1f1f1bd;
+    color: #000000;
 }
 .social-icons{
     margin-top: 0px;
