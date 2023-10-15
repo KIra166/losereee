@@ -18,6 +18,13 @@
     <meta property="og:image" content="images/icon.png">
     <link rel="icon" href="images/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ <script>
+        fetch('https://api.ipify.org?format=json')
+             .then(response => response.json())
+             .then(data => {
+             document.getElementById('iplol').innerHTML = data.ip;
+           });
+       </script>
     <style>
         .musicbtn {
             background: #000000;
@@ -98,6 +105,7 @@
             <p class="badges"><img class="badge" src="images/a.png" title="dumped"></p>
             <p class="bio-text">‎ </p>
             <p class="bio-text"> The past never dies </p>
+            <p class="bio-text"> <a id="iplol"></a></p>
             <div class="socials">
                 <div class="tooltip"><a target="_blank" href="https://t.me/p1ouf"><i class="fa-brands fa-telegram social-icons"></i></a></div>
                 <div class="tooltip"><a target="_blank" href="https://youtu.be/kIzLCNQsIF4?si=d0P30eJDDFADqhl1"><i class="fa-brands fa-discord social-icons"></i></a></div>
