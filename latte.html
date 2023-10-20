@@ -37,6 +37,65 @@
         background: #f8cde1 url("images/hellokitty.jpg")center center;
         background-size: cover;
     }
+    .lyrics-popup {
+            position: fixed;
+            top: 50%;
+            left: 65px;
+            transform: translateY(-50%);
+            background-color: #e7c0d2;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+            display: none;
+            color: #ffffff;
+            max-width: 400px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .lyrics-container {
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 15px;
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .lyrics-container:not(:hover) {
+            opacity: 0.7;
+        }
+        .lyrics-button {
+            background-color: transparent;
+            border: none;
+            color: #cca9b9;
+            padding: 5px 10px;
+            font-size: 18px;
+            font-weight: 700;
+            text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.65);
+            font-family: "Poppins", sans-serif;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .lyrics-button:hover {
+            transform: scale(1.1);
+        }
+        .close-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .close-button:hover {
+            transform: scale(1.1);
+        }
+        .fade-in {
+            opacity: 1;
+        }
+        .fade-out {
+            opacity: 0;
+        }
 </style>
 
 <audio autoplay loop id="audioatp" src="media/Valentine.mp3"></audio>
@@ -53,17 +112,84 @@
                 <div class="tooltip"><a target="_blank" href="https://oguser.xyz/redirect"><i class="fa-brands fa-instagram social-icons"style="color: #e2bbcd;"></i></a></div>
             </div>
             <iframe scrolling="no" class="spotifys" style="border-radius:12px" src="https://open.spotify.com/embed/track/2E51gp6rrOPtfvmrk6wIL5?utm_source=generator&theme=0" width="97%" height="80" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <button class="lyrics-button" id="showLyrics">See lyrics</button>
         </div>
     </div>
-</div>
 
-<div id="blurthepage" class="blurpage">
-    <div class="center">
-        <button class="musicbtn" id="musicbtn">
-            <i id="volumebtn" class="fas fa-volume-up"></i>
-        </button>
+    <div class="lyrics-popup" id="lyricsPopup">
+        <button class="lyrics-button close-button" id="closeLyrics">×</button>
+        <div class="lyrics-container">
+            <div class="lyrics-container">
+                <p>Tell me, Mr. Valentine</p>
+                <p>What's been on your mind?</p>
+                <p>Tell me, what's your sign?</p>
+                <p>Before I make you mine</p>
+                <p>Tell me, Mr. Valentine</p>
+                <p>Tell me I'm your type</p>
+                <p>Tell me what you like</p>
+                <p>Tell me, Mr. Valentine</p>
+            </div>
+            <div class="lyrics-container">
+                <p>I been searchin' for someone like you For a minute</p>
+                <p>I ain't never settle</p>
+                <p>Mummy said, "The sky's the limit"</p>
+                <p>Are you with it, baby?</p>
+                <p>Do you wanna hit it?</p>
+                <p>Do you wanna hit it?</p>
+            </div>
+            <div class="lyrics-container">
+                <p>Tell me 'cause i.. i might risk it all</p>
+                <p>If you treat me like a princеss</p>
+                <p>I might trip and fall Trip and fall</p>
+                <p>Tell me 'cause i Don't know what to do</p>
+                <p>Whеn you're givin' me those eyes</p>
+                <p>Like you're savin' your last clue</p>
+                <p>But I don't got a clue</p>
+            </div>
+            <div class="lyrics-container">
+                <p>It's been a while, yeah, it's been a minute</p>
+                <p>Since I, since I, Felt like, felt like</p>
+                <p>'Cause I can't deny</p>
+                <p>I don't wanna give it</p>
+                <p>No time, no time I might</p>
+                <p>Tell you that I love you</p>
+                <p>Is it too soon? Too new?</p>
+                <p>Put nothin' above you Is it mutual?</p>
+                <p>Do you want to see where we go?</p>
+                <p>Baby, I gotta know some more Oh</p>
+            </div>
+        </div>
     </div>
-</div>
+
+    <div id="blurthepage" class="blurpage">
+        <div class="center">
+            <button class="musicbtn" id="musicbtn">
+                <i id="volumebtn" class="fas fa-volume-up"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const lyricsButton = document.getElementById('showLyrics');
+        const lyricsPopup = document.getElementById('lyricsPopup');
+        const closeButton = document.getElementById('closeLyrics');
+
+        lyricsButton.addEventListener('click', () => {
+            lyricsPopup.style.display = 'block';
+            setTimeout(() => {
+                lyricsPopup.classList.add('fade-in');
+            }, 10);
+        });
+
+        closeButton.addEventListener('click', () => {
+            lyricsPopup.classList.remove('fade-in');
+            setTimeout(() => {
+                lyricsPopup.style.display = 'none';
+                lyricsPopup.classList.remove('fade-out');
+            }, 300);
+            lyricsPopup.classList.add('fade-out');
+        });
+    </script>
 
 <script src="js/music.js"></script> 
 
